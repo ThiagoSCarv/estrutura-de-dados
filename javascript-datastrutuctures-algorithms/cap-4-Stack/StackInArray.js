@@ -3,7 +3,7 @@ class Stack {
     this.items = []
   }
 
-  push(elements){
+  push(elements) {
     this.items.push(elements)
   }
 
@@ -18,7 +18,7 @@ class Stack {
   }
 
   isEmpty() {
-    if (this.items.length === 0){
+    if (this.items.length === 0) {
       return true
     }
 
@@ -33,7 +33,6 @@ class Stack {
     const sizeOfStack = this.items.length
     return sizeOfStack
   }
-
 }
 
 const stack = new Stack()
