@@ -68,12 +68,12 @@ class DoubleLinkedList extends LinkedList {
         } else {
           this.head.prev = undefined
         }
-      } else if (index === this.count - 1){
+      } else if (index === this.count - 1) {
         current = this.tail
         const previous = current.prev
         this.tail = previous
         previous.next = undefined
-      } else { 
+      } else {
         current = this.getElementByIndex(index)
         const previous = current.prev
         const next = current.next
@@ -104,7 +104,7 @@ newDoubleLinkedList.insert(19, 4)
 
 newDoubleLinkedList.removeAt(4)
 newDoubleLinkedList.removeAt(1)
- newDoubleLinkedList.removeAt(0)
-
+newDoubleLinkedList.removeAt(0)
+newDoubleLinkedList.insert(24, 3)
 
 console.log(newDoubleLinkedList.toString())
