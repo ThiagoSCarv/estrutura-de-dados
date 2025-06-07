@@ -104,7 +104,7 @@ newDoubleLinkedList.insert(19, 4)
 
 newDoubleLinkedList.removeAt(4)
 newDoubleLinkedList.removeAt(1)
-newDoubleLinkedList.removeAt(0)
+ newDoubleLinkedList.removeAt(0)
 
 
 console.log(newDoubleLinkedList.toString())
