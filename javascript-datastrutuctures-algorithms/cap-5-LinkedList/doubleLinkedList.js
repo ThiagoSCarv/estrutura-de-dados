@@ -2,7 +2,7 @@ import { defaultEquals } from './defaultEquals.js'
 import { DoubleNode } from './doubleNode.js'
 import LinkedList from './linkedList.js'
 
-class DoubleLinkedList extends LinkedList {
+export class DoubleLinkedList extends LinkedList {
   constructor(equalsFn = defaultEquals) {
     super(equalsFn)
     this.tail = undefined
