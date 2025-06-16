@@ -48,4 +48,48 @@ class Set {
     }
     return unionSet
   }
+
+  intersection(otherSet) {
+    const intersectionSet = new Set()
+    const values = this.items()
+    const otherValues = otherSet.items()
+    let biggerSet = values
+    let smallSet = otherValues
+    if (otherValues.length - values.length > 0) {
+      biggerSet = otherValues
+      smallSet = values
+    }
+    smallSet.foreach((item) => {
+      if (biggerSet.includes(item)) {
+        intersectionSet.add(item)
+      }
+    })
+    return intersectionSet
+  }
+
+  difference(otherSet) {
+    const differenceSet = new Set()
+    this.items().foreach((item) => {
+      if (!otherSet.has(item)) {
+        differenceSet.add(item)
+      }
+    })
+    return differenceSet
+  }
+
+  isSubsetOf(otherSet) {
+    if (this.size() > otherSet.size()) {
+      return false
+    }
+
+    let isSubset = true
+    this.values().every((item) => {
+      if (!otherSet.has(item)) {
+        isSubset = false
+        return false
+      }
+      return true
+    })
+    return isSubset
+  }
 }
