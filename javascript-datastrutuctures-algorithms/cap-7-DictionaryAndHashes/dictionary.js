@@ -77,7 +77,7 @@ export default class Dictionary {
   }
 }
 
-class HashTable {
+export class HashTable {
   constructor(toStrFn = defaultToString) {
     this.toStrFn = toStrFn
     this.table = {}
