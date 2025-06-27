@@ -1,7 +1,7 @@
 import { defaultEquals } from './defaultEquals.js'
 import { Node } from './node.js'
 
-export default class LinkedList {
+export class LinkedList {
   constructor(equalsFn = defaultEquals) {
     this.head = undefined
     this.count = 0
