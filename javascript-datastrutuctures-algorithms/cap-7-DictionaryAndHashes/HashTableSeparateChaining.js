@@ -1,6 +1,6 @@
-import { LinkedList } from '../cap-5-LinkedList/linkedList'
-import { defaultToString } from '../utils/defaultToSting'
-import { ValuePair } from './valuePair'
+import { LinkedList } from '../cap-5-LinkedList/linkedList.js'
+import { defaultToString } from '../utils/defaultToSting.js'
+import { ValuePair } from './valuePair.js'
 
 class HashTableSeparateChaining {
   constructor(toStrFn = defaultToString) {
@@ -15,7 +15,7 @@ class HashTableSeparateChaining {
 
     const tableKey = this.toStrFn(key)
     let hash = 0
-    for (let letter = 0; letter < tableKey.length; i++) {
+    for (let letter = 0; letter < tableKey.length; letter++) {
       hash += tableKey.charCodeAt(letter)
     }
     return hash % 37
@@ -26,9 +26,9 @@ class HashTableSeparateChaining {
   }
 
   put(key, value) {
-    if (key !== null || value !== null) {
+    if (key != null || value != null) {
       const position = this.hashCode(key)
-      if (this.table[position] === null) {
+      if (this.table[position] == null) {
         this.table[position] = new LinkedList()
       }
 
@@ -42,11 +42,11 @@ class HashTableSeparateChaining {
   get(key) {
     const position = this.hashCode(key)
     const linkedList = this.table[position]
-    if (linkedList !== null && !linkedList.isEmpty) {
+    if (linkedList != null && !linkedList.isEmpty()) {
       let current = linkedList.getHead()
-      while (current !== null) {
+      while (current != null) {
         if (current.element.key === key) {
-          return current.element.key
+          return current.element.value
         }
         current = current.next
       }
@@ -73,3 +73,17 @@ class HashTableSeparateChaining {
     return false
   }
 }
+
+const hashTableSeparateChaining = new HashTableSeparateChaining()
+hashTableSeparateChaining.put('Ygritte', 'Ygritte')
+hashTableSeparateChaining.put('Jonathan', 'Jonathan')
+hashTableSeparateChaining.put('Jamie', 'Jamie')
+hashTableSeparateChaining.put('Jack', 'Jack')
+hashTableSeparateChaining.put('Jasmine', 'Jasmine')
+hashTableSeparateChaining.put('Jake', 'Jake')
+hashTableSeparateChaining.put('Nathan', 'Nathan')
+hashTableSeparateChaining.put('Athelstan', 'Athelstan')
+hashTableSeparateChaining.put('Sue', 'Sue')
+hashTableSeparateChaining.put('Aethelwulf', 'Aethelwulf')
+hashTableSeparateChaining.put('Sargeras', 'Sargeras')
+console.log(hashTableSeparateChaining.table)
